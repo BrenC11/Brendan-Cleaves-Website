@@ -64,6 +64,7 @@ export const projects: Project[] = [
     role: "Writer / Director",
     accent: "#223f35",
     embedSrc: "https://framerate.com/embed/0Yy8ojCx",
+    thumbnailSrc: "/thumbnails/project-placeholder.svg",
   },
   {
     title: "Roger",
@@ -88,7 +89,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#5f5b52",
     embedSrc: "https://framerate.com/embed/yWdAT2s0",
-    thumbnailSrc: "/thumbnails/for-living-next-door-to-alex.webp",
+    thumbnailSrc: "/thumbnails/project-placeholder.svg",
   },
   {
     title: "Specsavers - Nessie",
@@ -100,6 +101,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#2f6b4d",
     embedSrc: "https://framerate.com/embed/GqD_-gf8",
+    thumbnailSrc: "/thumbnails/specsavers-nessie.webp",
   },
   {
     title: "Hyundai - Hunted",
@@ -111,6 +113,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#8a6a2a",
     embedSrc: "https://framerate.com/embed/QWEuTtcq",
+    thumbnailSrc: "/thumbnails/project-placeholder.svg",
   },
   {
     title: "Hostage",
@@ -122,11 +125,12 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#8b1a1a",
     embedSrc: "https://player.vimeo.com/video/789042874?h=9b26df46cb&title=0&byline=0&portrait=0",
+    thumbnailSrc: "/thumbnails/project-placeholder.svg",
   },
   {
-    title: "Coldplay - Echo",
+    title: "Coldplay",
     slug: "coldplay-echo",
-    category: "music-videos",
+    category: "fiction",
     year: "2022",
     logline: "A dreamlike short built around light and motion.",
     runtime: "3:40",
@@ -137,7 +141,7 @@ export const projects: Project[] = [
     thumbnailSrc: "/thumbnails/coldplay.webp",
   },
   {
-    title: "Kids - Turn",
+    title: "Death Kool-Aid - Kids",
     slug: "kids-turn",
     category: "music-videos",
     year: "2021",
@@ -150,7 +154,7 @@ export const projects: Project[] = [
   {
     title: "Target Zero",
     slug: "target-zero",
-    category: "in-development",
+    category: "fiction",
     year: "2026",
     logline: "A crime thriller built around a disappearing city.",
     role: "Writer / Director",
@@ -190,12 +194,12 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#7a4d39",
     embedSrc: "https://framerate.com/embed/MDtycjVa",
-    thumbnailSrc: "/thumbnails/the-wrong-swipe.webp",
+    thumbnailSrc: "/thumbnails/knock-knock-knock.webp",
   },
   {
     title: "The Dead Collectors",
     slug: "the-dead-collectors",
-    category: "in-development",
+    category: "fiction",
     year: "2026",
     logline: "A surreal noir that follows a pair of reluctant fixers.",
     role: "Writer / Director",
