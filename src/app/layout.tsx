@@ -19,7 +19,7 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Brendan Cleaves | Director",
-  description: "Film and photography portfolio of director Brendan Cleaves.",
+  description: "Film portfolio of director Brendan Cleaves.",
 };
 
 export default function RootLayout({

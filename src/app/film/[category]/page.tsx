@@ -1,19 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { notFound } from "next/navigation";
 import { filmCategories, projects } from "@/data/site";
 
 type Props = {
-  params: { category: string };
+  params: Promise<{ category: string }>;
 };
 
-export default function FilmCategoryPage({ params }: Props) {
-  const category = filmCategories.find((item) => item.slug === params.category);
+export function generateStaticParams() {
+  return filmCategories.map((item) => ({ category: item.slug }));
+}
+
+export default async function FilmCategoryPage({ params }: Props) {
+  const { category: categorySlug } = await params;
+  const category = filmCategories.find((item) => item.slug === categorySlug);
   if (!category) {
     notFound();
   }
 
-  const filtered = projects.filter((project) => project.category === params.category);
+  const filtered = projects.filter((project) => project.category === categorySlug);
 
   return (
     <div className="section">
@@ -33,14 +39,16 @@ export default function FilmCategoryPage({ params }: Props) {
             <Link
               key={project.slug}
               href={`/film/${project.category}/${project.slug}`}
-              className="card relative flex min-h-[240px] flex-col justify-between overflow-hidden p-6"
+              className="card relative flex min-h-[260px] flex-col justify-between overflow-hidden p-6"
               style={{ "--accent": project.accent } as CSSProperties}
             >
               {project.thumbnailSrc && (
                 <>
-                  <img
+                  <Image
                     src={project.thumbnailSrc}
                     alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="absolute inset-0 h-full w-full object-cover opacity-75"
                   />
                   <div className="absolute inset-0 bg-black/45" />
@@ -49,7 +57,6 @@ export default function FilmCategoryPage({ params }: Props) {
               <div className="relative z-10">
                 <p className="eyebrow">{project.year}</p>
                 <h2 className="mt-2 text-xl uppercase tracking-[0.2em]">{project.title}</h2>
-                <p className="mt-3 text-sm text-white/70">{project.logline}</p>
               </div>
               <span className="relative z-10 text-xs uppercase tracking-[0.3em] text-white/70">View project</span>
             </Link>

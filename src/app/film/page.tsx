@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { filmCategories, projects } from "@/data/site";
@@ -9,9 +10,6 @@ export default function FilmPage() {
         <div className="flex flex-col gap-4">
           <p className="eyebrow">Film</p>
           <h1 className="display">Selected Work</h1>
-          <p className="text-lg text-white/70">
-            Fiction, commercial, and music videos with a signature blend of dark humor and emotional grit.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -34,14 +32,16 @@ export default function FilmPage() {
             <Link
               key={project.slug}
               href={`/film/${project.category}/${project.slug}`}
-              className="card relative flex min-h-[240px] flex-col justify-between overflow-hidden p-6"
+              className="card relative flex min-h-[260px] flex-col justify-between overflow-hidden p-6"
               style={{ "--accent": project.accent } as CSSProperties}
             >
               {project.thumbnailSrc && (
                 <>
-                  <img
+                  <Image
                     src={project.thumbnailSrc}
                     alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="absolute inset-0 h-full w-full object-cover opacity-75"
                   />
                   <div className="absolute inset-0 bg-black/45" />
@@ -50,7 +50,6 @@ export default function FilmPage() {
               <div className="relative z-10">
                 <p className="eyebrow">{project.year}</p>
                 <h3 className="mt-2 text-xl uppercase tracking-[0.2em]">{project.title}</h3>
-                <p className="mt-3 text-sm text-white/70">{project.logline}</p>
               </div>
               <span className="relative z-10 text-xs uppercase tracking-[0.3em] text-white/70">View project</span>
             </Link>

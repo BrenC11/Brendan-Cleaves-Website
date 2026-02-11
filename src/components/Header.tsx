@@ -6,7 +6,6 @@ import { filmCategories, site } from "@/data/site";
 
 const navLinks = [
   { label: "Film", href: "/film" },
-  { label: "Photography", href: "/photography" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
