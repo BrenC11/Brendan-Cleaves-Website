@@ -22,6 +22,7 @@ type Project = {
   category: string;
   year: string;
   logline: string;
+  description: string;
   runtime?: string;
   role?: string;
   accent: string;
@@ -36,6 +37,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "2024",
     logline: "A grieving drifter confronts the story he helped bury.",
+    description:
+      "A psychological horror short about grief, guilt, and the stories we refuse to face. The film blends grounded performances with escalating dread and surreal visual turns.",
     runtime: "18 min",
     role: "Writer / Director",
     accent: "#a21d1d",
@@ -48,6 +51,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "2023",
     logline: "A deadpan love story told through a surreal interview.",
+    description:
+      "A dark comedy romance told through an interview format that keeps folding in on itself. The tone balances awkward humor with emotional vulnerability.",
     runtime: "11 min",
     role: "Director",
     accent: "#3f7bf5",
@@ -60,6 +65,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "2022",
     logline: "Two brothers chase a rumor across a dying seaside town.",
+    description:
+      "A character-led short following two brothers across a fading landscape in search of something half-mythic, half-desperate. The film leans into atmosphere and understated tension.",
     runtime: "14 min",
     role: "Writer / Director",
     accent: "#223f35",
@@ -72,6 +79,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "2018",
     logline: "A sharp-edged short built around a single night spiraling out.",
+    description:
+      "Originally written as proof of concept for a feature, ROGER pushes dark comedy and genre tension into a single escalating night. The short stars John Bradley and Seann Walsh.",
     runtime: "TBD",
     role: "Writer / Director",
     accent: "#6e1c1c",
@@ -85,6 +94,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "2021",
     logline: "A dark comedy built around one neighborhood rivalry gone sideways.",
+    description:
+      "A comedy short about social pressure, pride, and petty rivalry escalating into chaos. The style is dry, observational, and deliberately uncomfortable.",
     runtime: "TBD",
     role: "Director",
     accent: "#5f5b52",
@@ -97,6 +108,8 @@ export const projects: Project[] = [
     category: "commercial",
     year: "2024",
     logline: "A search for a legend becomes a playful brand film.",
+    description:
+      "A commercial spot built around a playful search narrative, blending cinematic framing with quick comedic beats while keeping the brand front and center.",
     runtime: "30 sec",
     role: "Director",
     accent: "#2f6b4d",
@@ -109,6 +122,8 @@ export const projects: Project[] = [
     category: "commercial",
     year: "2023",
     logline: "An adrenaline-forward spot for the newest model.",
+    description:
+      "A performance-led automotive commercial designed for pace and impact, pairing clean action coverage with precise product-focused storytelling.",
     runtime: "60 sec",
     role: "Director",
     accent: "#8a6a2a",
@@ -121,6 +136,8 @@ export const projects: Project[] = [
     category: "commercial",
     year: "2022",
     logline: "A tense genre vignette that flips expectations.",
+    description:
+      "A short-form brand film that opens in thriller territory and pivots into an unexpected reveal. Shot for high tension, fast clarity, and a memorable payoff.",
     runtime: "45 sec",
     role: "Director",
     accent: "#8b1a1a",
@@ -133,6 +150,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "2022",
     logline: "A dreamlike short built around light and motion.",
+    description:
+      "A stylized short that prioritizes mood, rhythm, and movement. The piece explores dream logic through color, texture, and expressive camera language.",
     runtime: "3:40",
     role: "Director",
     accent: "#cf5a3a",
@@ -146,6 +165,8 @@ export const projects: Project[] = [
     category: "music-videos",
     year: "2021",
     logline: "A kinetic performance piece set in one take.",
+    description:
+      "A music video for Death Kool-Aid built around forward motion and raw performance energy. The visual approach stays tight and urgent to match the track.",
     runtime: "4:05",
     role: "Director",
     accent: "#2d3d8e",
@@ -157,6 +178,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "2026",
     logline: "A crime thriller built around a disappearing city.",
+    description:
+      "A feature project in development. Target Zero is a crime-thriller concept focused on fractured identity, urban paranoia, and morally compromised characters.",
     role: "Writer / Director",
     accent: "#c63131",
   },
@@ -166,6 +189,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "TBD",
     logline: "A sharp, character-led short built around an unlikely duo.",
+    description:
+      "A genre-adjacent short centered on two mismatched leads forced into a high-pressure situation. The film balances tension with grounded comedic beats.",
     runtime: "TBD",
     role: "Director",
     accent: "#4b4b4b",
@@ -178,6 +203,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "TBD",
     logline: "A darkly comic short where one decision derails everything.",
+    description:
+      "A short dark comedy about digital-age anxiety and impulsive choices. The film escalates a familiar everyday action into increasingly surreal consequences.",
     runtime: "TBD",
     role: "Director",
     accent: "#4e5666",
@@ -190,6 +217,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "TBD",
     logline: "A twisted comedy where each knock makes the night worse.",
+    description:
+      "A contained horror-comedy with a simple setup and relentless escalation. Each interruption pushes the protagonist deeper into paranoia and absurdity.",
     runtime: "TBD",
     role: "Director",
     accent: "#7a4d39",
@@ -202,6 +231,8 @@ export const projects: Project[] = [
     category: "fiction",
     year: "2026",
     logline: "A surreal noir that follows a pair of reluctant fixers.",
+    description:
+      "A genre project mixing noir atmosphere, horror-comedy, and character-driven conflict. The story follows two reluctant fixers through an increasingly bizarre underworld.",
     role: "Writer / Director",
     accent: "#5a7d2c",
     embedSrc: "https://www.youtube.com/embed/RcTRGdePWGI?start=40",

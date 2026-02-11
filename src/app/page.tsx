@@ -50,7 +50,7 @@ export default function Home() {
               <Link
                 key={project.slug}
                 href={`/film/${project.category}/${project.slug}`}
-                className="card relative flex min-h-[260px] flex-col justify-between overflow-hidden p-6"
+                className="card relative aspect-[2/3] flex flex-col justify-between overflow-hidden p-6"
                 style={{ "--accent": project.accent } as CSSProperties}
               >
                 {project.thumbnailSrc && (

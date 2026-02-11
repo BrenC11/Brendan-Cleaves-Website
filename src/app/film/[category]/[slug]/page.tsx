@@ -53,8 +53,9 @@ export default async function FilmProjectPage({ params }: Props) {
               />
             </div>
           ) : (
-            <div className="flex min-h-[240px] items-center justify-center text-sm uppercase tracking-[0.3em] text-white/70">
-              Video Placeholder
+            <div className="flex min-h-[240px] flex-col items-center justify-center gap-3 text-center">
+              <p className="text-sm uppercase tracking-[0.3em] text-white/70">In Development</p>
+              <p className="max-w-md text-sm text-white/60">Video or teaser coming soon.</p>
             </div>
           )}
           <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/60">
@@ -67,6 +68,8 @@ export default async function FilmProjectPage({ params }: Props) {
           <div className="flex flex-col gap-4">
             <h2 className="text-xl uppercase tracking-[0.2em]">Logline</h2>
             <p className="text-white/70">{project.logline}</p>
+            <h3 className="text-xl uppercase tracking-[0.2em]">About the Project</h3>
+            <p className="text-white/70">{project.description}</p>
           </div>
           <div className="card flex flex-col gap-4 p-6" style={{ "--accent": "#2a2a2a" } as CSSProperties}>
             <p className="eyebrow">Project Details</p>
