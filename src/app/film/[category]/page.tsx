@@ -33,15 +33,25 @@ export default function FilmCategoryPage({ params }: Props) {
             <Link
               key={project.slug}
               href={`/film/${project.category}/${project.slug}`}
-              className="card flex min-h-[240px] flex-col justify-between p-6"
+              className="card relative flex min-h-[240px] flex-col justify-between overflow-hidden p-6"
               style={{ "--accent": project.accent } as CSSProperties}
             >
-              <div>
+              {project.thumbnailSrc && (
+                <>
+                  <img
+                    src={project.thumbnailSrc}
+                    alt={project.title}
+                    className="absolute inset-0 h-full w-full object-cover opacity-75"
+                  />
+                  <div className="absolute inset-0 bg-black/45" />
+                </>
+              )}
+              <div className="relative z-10">
                 <p className="eyebrow">{project.year}</p>
                 <h2 className="mt-2 text-xl uppercase tracking-[0.2em]">{project.title}</h2>
                 <p className="mt-3 text-sm text-white/70">{project.logline}</p>
               </div>
-              <span className="text-xs uppercase tracking-[0.3em] text-white/70">View project</span>
+              <span className="relative z-10 text-xs uppercase tracking-[0.3em] text-white/70">View project</span>
             </Link>
           ))}
         </div>
