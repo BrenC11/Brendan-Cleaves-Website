@@ -2,8 +2,8 @@ export const site = {
   name: "Brendan Cleaves",
   email: "brendancleaves@me.com",
   socials: [
-    { label: "Instagram", href: "https://instagram.com/" },
-    { label: "IMDb", href: "https://www.imdb.com/" },
+    { label: "Instagram", href: "https://www.instagram.com/brendancleaves" },
+    { label: "IMDb", href: "https://www.imdb.com/name/nm1309633/?ref_=tt_ov_dr" },
     { label: "Twitter", href: "https://twitter.com/" },
     { label: "LinkedIn", href: "https://www.linkedin.com/" },
   ],
@@ -41,6 +41,7 @@ export const projects: Project[] = [
       "A new fiction project currently in production. Trailer, artwork, and full release details will be added soon.",
     role: "Writer / Director",
     accent: "#7c1212",
+    embedSrc: "https://framerate.com/embed/35xoNSF6",
     thumbnailSrc: "/thumbnails/project-placeholder.svg",
   },
   {
@@ -61,7 +62,7 @@ export const projects: Project[] = [
     title: "Angela",
     slug: "angela",
     category: "fiction",
-    year: "2023",
+    year: "2025",
     logline: "A deadpan love story told through a surreal interview.",
     description:
       "A dark comedy romance told through an interview format that keeps folding in on itself. The tone balances awkward humor with emotional vulnerability.",
@@ -75,7 +76,7 @@ export const projects: Project[] = [
     title: "The Lawnmower Men",
     slug: "the-lawnmower-men",
     category: "fiction",
-    year: "2022",
+    year: "2021",
     logline: "Two brothers chase a rumor across a dying seaside town.",
     description:
       "A character-led short following two brothers across a fading landscape in search of something half-mythic, half-desperate. The film leans into atmosphere and understated tension.",
@@ -89,7 +90,7 @@ export const projects: Project[] = [
     title: "Roger",
     slug: "roger",
     category: "fiction",
-    year: "2018",
+    year: "2016",
     logline: "A sharp-edged short built around a single night spiraling out.",
     description:
       "Originally written as proof of concept for a feature, ROGER pushes dark comedy and genre tension into a single escalating night. The short stars John Bradley and Seann Walsh.",
@@ -104,7 +105,7 @@ export const projects: Project[] = [
     title: "For Living Next Door to Alex",
     slug: "for-living-next-door-to-alex",
     category: "fiction",
-    year: "2021",
+    year: "2020",
     logline: "A dark comedy built around one neighborhood rivalry gone sideways.",
     description:
       "A comedy short about social pressure, pride, and petty rivalry escalating into chaos. The style is dry, observational, and deliberately uncomfortable.",
@@ -160,7 +161,7 @@ export const projects: Project[] = [
     title: "Coldplay",
     slug: "coldplay-echo",
     category: "fiction",
-    year: "2022",
+    year: "2019",
     logline: "A dreamlike short built around light and motion.",
     description:
       "A stylized short that prioritizes mood, rhythm, and movement. The piece explores dream logic through color, texture, and expressive camera language.",
@@ -183,6 +184,20 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#2d3d8e",
     embedSrc: "https://player.vimeo.com/video/174821376?h=eff6463098&title=0&byline=0&portrait=0",
+    thumbnailSrc: "/thumbnails/project-placeholder.svg",
+  },
+  {
+    title: "Karaoke For Beginners - Clowns",
+    slug: "karaoke-for-beginners-clowns",
+    category: "music-videos",
+    year: "2026",
+    logline: "A new music video release with bold performance energy.",
+    description:
+      "A music video for Karaoke For Beginners, built around a strong central performance style and high-impact visual rhythm.",
+    runtime: "TBD",
+    role: "Director",
+    accent: "#8a1f4f",
+    embedSrc: "https://framerate.com/embed/xQx3zS-s",
     thumbnailSrc: "/thumbnails/project-placeholder.svg",
   },
   {
@@ -214,7 +229,7 @@ export const projects: Project[] = [
     title: "The Wrong Swipe",
     slug: "the-wrong-swipe",
     category: "fiction",
-    year: "TBD",
+    year: "2019",
     logline: "A darkly comic short where one decision derails everything.",
     description:
       "A short dark comedy about digital-age anxiety and impulsive choices. The film escalates a familiar everyday action into increasingly surreal consequences.",
@@ -228,7 +243,7 @@ export const projects: Project[] = [
     title: "Knock Knock Knock",
     slug: "knock-knock-knock",
     category: "fiction",
-    year: "TBD",
+    year: "2023",
     logline: "A twisted comedy where each knock makes the night worse.",
     description:
       "A contained horror-comedy with a simple setup and relentless escalation. Each interruption pushes the protagonist deeper into paranoia and absurdity.",
@@ -242,7 +257,7 @@ export const projects: Project[] = [
     title: "The Dead Collectors",
     slug: "the-dead-collectors",
     category: "fiction",
-    year: "2026",
+    year: "2021",
     logline: "A surreal noir that follows a pair of reluctant fixers.",
     description:
       "A genre project mixing noir atmosphere, horror-comedy, and character-driven conflict. The story follows two reluctant fixers through an increasingly bizarre underworld.",

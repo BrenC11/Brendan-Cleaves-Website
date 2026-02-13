@@ -4,9 +4,16 @@ import type { CSSProperties } from "react";
 import { filmCategories, projects } from "@/data/site";
 
 const featuredProject = projects.find((project) => project.slug === "crack-hack") ?? projects[0];
-const exploreProjects = projects
-  .filter((project) => project.slug !== featuredProject.slug)
-  .slice(0, 5);
+const exploreProjectSlugs = [
+  "the-tunnel",
+  "angela",
+  "the-dead-collectors",
+  "roger",
+  "the-lawnmower-men",
+];
+const exploreProjects = exploreProjectSlugs
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is (typeof projects)[number] => Boolean(project));
 
 export default function Home() {
   return (

@@ -20,8 +20,21 @@ export default async function FilmCategoryPage({ params }: Props) {
   }
 
   const filtered = projects.filter((project) => project.category === categorySlug);
+  const sortedProjects =
+    categorySlug === "fiction"
+      ? [...filtered].sort((a, b) => {
+          const aYear = Number.parseInt(a.year, 10);
+          const bYear = Number.parseInt(b.year, 10);
+          const aValue = Number.isFinite(aYear) ? aYear : -1;
+          const bValue = Number.isFinite(bYear) ? bYear : -1;
+          return bValue - aValue;
+        })
+      : filtered;
   const isPosterLayout = categorySlug === "fiction";
   const isLandscapeLayout = categorySlug === "commercial" || categorySlug === "music-videos";
+  const gridClasses = isPosterLayout
+    ? "grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+    : "grid gap-6 md:grid-cols-2 lg:grid-cols-3";
 
   return (
     <div className="section">
@@ -36,8 +49,8 @@ export default async function FilmCategoryPage({ params }: Props) {
           </Link>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((project) => (
+        <div className={gridClasses}>
+          {sortedProjects.map((project) => (
             <Link
               key={project.slug}
               href={`/film/${project.category}/${project.slug}`}
@@ -66,7 +79,7 @@ export default async function FilmCategoryPage({ params }: Props) {
           ))}
         </div>
 
-        {filtered.length === 0 && (
+        {sortedProjects.length === 0 && (
           <p className="text-white/60">Projects for this section are coming soon.</p>
         )}
       </div>
