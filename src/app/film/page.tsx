@@ -32,7 +32,7 @@ export default function FilmPage() {
             <Link
               key={project.slug}
               href={`/film/${project.category}/${project.slug}`}
-              className="card relative flex min-h-[260px] flex-col justify-between overflow-hidden p-6"
+              className="group media-card card relative aspect-[2/3] overflow-hidden"
               style={{ "--accent": project.accent } as CSSProperties}
             >
               {project.thumbnailSrc && (
@@ -42,16 +42,15 @@ export default function FilmPage() {
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="absolute inset-0 h-full w-full object-cover opacity-75"
+                    className="absolute inset-0 h-full w-full object-contain"
                   />
-                  <div className="absolute inset-0 bg-black/45" />
+                  <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/60" />
                 </>
               )}
-              <div className="relative z-10">
-                <p className="eyebrow">{project.year}</p>
-                <h3 className="mt-2 text-xl uppercase tracking-[0.2em]">{project.title}</h3>
+              <div className="absolute inset-x-0 bottom-0 z-10 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p className="text-xs uppercase tracking-[0.25em] text-white/75">{project.year}</p>
+                <h3 className="mt-2 text-lg uppercase tracking-[0.2em] text-white">{project.title}</h3>
               </div>
-              <span className="relative z-10 text-xs uppercase tracking-[0.3em] text-white/70">View project</span>
             </Link>
           ))}
         </div>

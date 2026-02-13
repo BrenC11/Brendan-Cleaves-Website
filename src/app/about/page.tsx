@@ -2,6 +2,11 @@ import type { CSSProperties } from "react";
 import { aboutBio, awards } from "@/data/site";
 
 const totalEntries = awards.reduce((sum, item) => sum + item.list.length, 0);
+const sortAwardEntries = (entries: string[]) => {
+  const nonWinners = entries.filter((entry) => !/\bwinner\b/i.test(entry));
+  const winners = entries.filter((entry) => /\bwinner\b/i.test(entry));
+  return [...winners, ...nonWinners];
+};
 
 export default function AboutPage() {
   return (
@@ -50,7 +55,7 @@ export default function AboutPage() {
                 </div>
               </summary>
               <ul className="mt-4 space-y-2 text-sm text-white/70">
-                {item.list.map((entry) => (
+                {sortAwardEntries(item.list).map((entry) => (
                   <li key={entry}>{entry}</li>
                 ))}
               </ul>

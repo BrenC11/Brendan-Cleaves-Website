@@ -7,6 +7,12 @@ type Props = {
   params: Promise<{ category: string; slug: string }>;
 };
 
+const sortAwardEntries = (entries: string[]) => {
+  const nonWinners = entries.filter((entry) => !/\bwinner\b/i.test(entry));
+  const winners = entries.filter((entry) => /\bwinner\b/i.test(entry));
+  return [...winners, ...nonWinners];
+};
+
 export function generateStaticParams() {
   return projects.map((project) => ({
     category: project.category,
@@ -86,7 +92,7 @@ export default async function FilmProjectPage({ params }: Props) {
                   <p className="text-xs uppercase tracking-[0.3em] text-white/60">{matchedAwards.cycle}</p>
                 ) : null}
                 <ul className="space-y-2 text-sm text-white/70">
-                  {matchedAwards.list.map((entry) => (
+                  {sortAwardEntries(matchedAwards.list).map((entry) => (
                     <li key={entry}>{entry}</li>
                   ))}
                 </ul>
