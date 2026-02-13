@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { aboutBio, awards } from "@/data/site";
 
-const selectedAwards = awards.slice(0, 4);
+const totalEntries = awards.reduce((sum, item) => sum + item.list.length, 0);
 
 export default function AboutPage() {
   return (
@@ -25,21 +25,36 @@ export default function AboutPage() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <p className="eyebrow">Selected Festivals & Awards</p>
-          <p className="text-sm text-white/60">100+ festival screenings worldwide including BAFTA and Academy-qualifying events.</p>
+          <p className="eyebrow">Festivals, Awards & Nominations</p>
+          <p className="text-sm text-white/60">
+            {totalEntries} listed selections, wins, and nominations across {awards.length} projects.
+          </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          {selectedAwards.map((item) => (
-            <div key={item.title} className="card p-6" style={{ "--accent": "#2f2f2f" } as CSSProperties}>
-              <h2 className="text-lg uppercase tracking-[0.2em]">{item.title}</h2>
-              {item.cycle ? <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/60">{item.cycle}</p> : null}
+        <div className="grid gap-4">
+          {awards.map((item) => (
+            <details
+              key={item.title}
+              className="card p-6"
+              style={{ "--accent": "#2f2f2f" } as CSSProperties}
+            >
+              <summary className="cursor-pointer list-none">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <h2 className="text-lg uppercase tracking-[0.2em]">{item.title}</h2>
+                    {item.cycle ? (
+                      <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/60">{item.cycle}</p>
+                    ) : null}
+                  </div>
+                  <span className="tag">{item.list.length} entries</span>
+                </div>
+              </summary>
               <ul className="mt-4 space-y-2 text-sm text-white/70">
-                {item.list.slice(0, 5).map((entry) => (
+                {item.list.map((entry) => (
                   <li key={entry}>{entry}</li>
                 ))}
               </ul>
-            </div>
+            </details>
           ))}
         </div>
       </div>

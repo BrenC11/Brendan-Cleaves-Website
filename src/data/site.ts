@@ -113,7 +113,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#5f5b52",
     embedSrc: "https://framerate.com/embed/yWdAT2s0",
-    thumbnailSrc: "/thumbnails/project-placeholder.svg",
+    thumbnailSrc: "/thumbnails/for-living-next-door-to-alex.jpg",
   },
   {
     title: "Specsavers - Nessie",
@@ -210,6 +210,7 @@ export const projects: Project[] = [
       "A feature project in development. Target Zero is a crime-thriller concept focused on fractured identity, urban paranoia, and morally compromised characters.",
     role: "Writer / Director",
     accent: "#c63131",
+    thumbnailSrc: "/thumbnails/target-zero.jpg",
   },
   {
     title: "Sam and Doug",
