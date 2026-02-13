@@ -32,6 +32,18 @@ type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Crack Hack",
+    slug: "crack-hack",
+    category: "fiction",
+    year: "2026",
+    logline: "A new genre project currently in post-production.",
+    description:
+      "A new fiction project currently in production. Trailer, artwork, and full release details will be added soon.",
+    role: "Writer / Director",
+    accent: "#7c1212",
+    thumbnailSrc: "/thumbnails/project-placeholder.svg",
+  },
+  {
     title: "The Tunnel",
     slug: "the-tunnel",
     category: "fiction",
@@ -171,6 +183,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#2d3d8e",
     embedSrc: "https://player.vimeo.com/video/174821376?h=eff6463098&title=0&byline=0&portrait=0",
+    thumbnailSrc: "/thumbnails/project-placeholder.svg",
   },
   {
     title: "Target Zero",

@@ -93,6 +93,10 @@ img {
   pointer-events: none;
 }
 
+.media-card::after {
+  display: none;
+}
+
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);

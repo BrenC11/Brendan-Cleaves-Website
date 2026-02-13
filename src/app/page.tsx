@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { filmCategories, projects, site } from "@/data/site";
+import { filmCategories, projects } from "@/data/site";
 
-const featured = projects.slice(0, 3);
+const featuredProject = projects.find((project) => project.slug === "crack-hack") ?? projects[0];
+const exploreProjects = projects
+  .filter((project) => project.slug !== featuredProject.slug)
+  .slice(0, 5);
 
 export default function Home() {
   return (
@@ -13,7 +16,6 @@ export default function Home() {
           <div className="flex flex-col gap-6">
             <p className="eyebrow">Director / Writer</p>
             <h1 className="display">Simple stories. Sharp edges.</h1>
-            <p className="max-w-xl text-base text-white/70">{site.name} makes fiction, commercials, and music videos.</p>
             <div className="flex flex-wrap gap-4">
               <Link href="/film" className="tag">
                 View Work
@@ -23,13 +25,26 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="card flex min-h-[320px] flex-col justify-end p-8" style={{ "--accent": "#9e1b1b" } as CSSProperties}>
-            <p className="eyebrow">Featured</p>
-            <h2 className="text-3xl uppercase tracking-[0.2em]">The Lawnmower Men</h2>
-            <Link href="/film/fiction/the-lawnmower-men" className="mt-5 inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em]">
-              View project
-            </Link>
-          </div>
+          <Link
+            href={`/film/${featuredProject.category}/${featuredProject.slug}`}
+            className="group media-card card relative aspect-[2/3] overflow-hidden"
+            style={{ "--accent": featuredProject.accent } as CSSProperties}
+          >
+            {featuredProject.thumbnailSrc ? (
+              <Image
+                src={featuredProject.thumbnailSrc}
+                alt={featuredProject.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 36vw"
+                className="object-contain"
+              />
+            ) : null}
+            <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/55" />
+            <div className="absolute inset-x-0 bottom-0 p-6 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <p className="eyebrow">Featured</p>
+              <h2 className="mt-2 text-3xl uppercase tracking-[0.2em]">{featuredProject.title}</h2>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -45,12 +60,12 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {featured.map((project) => (
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+            {exploreProjects.map((project) => (
               <Link
                 key={project.slug}
                 href={`/film/${project.category}/${project.slug}`}
-                className="card relative aspect-[2/3] flex flex-col justify-between overflow-hidden p-6"
+                className="group media-card card relative aspect-[2/3] overflow-hidden"
                 style={{ "--accent": project.accent } as CSSProperties}
               >
                 {project.thumbnailSrc && (
@@ -59,17 +74,15 @@ export default function Home() {
                       src={project.thumbnailSrc}
                       alt={project.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="absolute inset-0 h-full w-full object-cover opacity-75"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/45" />
+                    <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/60" />
                   </>
                 )}
-                <div className="relative z-10">
-                  <p className="eyebrow">{project.category.replace("-", " ")}</p>
-                  <h3 className="mt-3 text-xl uppercase tracking-[0.2em]">{project.title}</h3>
+                <div className="absolute inset-x-0 bottom-0 z-10 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <h3 className="text-base uppercase tracking-[0.2em] text-white">{project.title}</h3>
                 </div>
-                <div className="relative z-10 text-xs uppercase tracking-[0.3em] text-white/70">View project</div>
               </Link>
             ))}
           </div>
