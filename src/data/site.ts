@@ -146,7 +146,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#8a6a2a",
     embedSrc: "https://framerate.com/embed/QWEuTtcq",
-    thumbnailSrc: "/thumbnails/project-placeholder.svg",
+    thumbnailSrc: "/thumbnails/Hyunidi.jpeg.webp",
   },
   {
     title: "Hostage",
@@ -160,7 +160,21 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#8b1a1a",
     embedSrc: "https://player.vimeo.com/video/789042874?h=9b26df46cb&title=0&byline=0&portrait=0",
-    thumbnailSrc: "/thumbnails/project-placeholder.svg",
+    thumbnailSrc: "/thumbnails/Hostage.png.webp",
+  },
+  {
+    title: "Hewden - Dumpers for Goalposts",
+    slug: "hewden-dumpers-for-goalposts",
+    category: "commercial",
+    year: "2018",
+    logline: "A playful commercial where dumpers become football goalposts.",
+    description:
+      "A character-led commercial concept built around a simple comic idea and strong brand-led payoff.",
+    runtime: "TBD",
+    role: "Director",
+    accent: "#6e5a2d",
+    embedSrc: "https://framerate.com/embed/OLN6LpOL",
+    thumbnailSrc: "/thumbnails/Hewden.jpeg.webp",
   },
   {
     title: "Coldplay",
@@ -189,7 +203,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#2d3d8e",
     embedSrc: "https://player.vimeo.com/video/174821376?h=eff6463098&title=0&byline=0&portrait=0",
-    thumbnailSrc: "/thumbnails/project-placeholder.svg",
+    thumbnailSrc: "/thumbnails/kids.jpg.webp",
   },
   {
     title: "Karaoke For Beginners - Clowns",
@@ -203,7 +217,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#8a1f4f",
     embedSrc: "https://framerate.com/embed/xQx3zS-s",
-    thumbnailSrc: "/thumbnails/project-placeholder.svg",
+    thumbnailSrc: "/thumbnails/clowns.jpeg.webp",
   },
   {
     title: "Target Zero",

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { notFound } from "next/navigation";
-import { filmCategories, projects } from "@/data/site";
+import { awards, filmCategories, projects } from "@/data/site";
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
@@ -26,6 +26,15 @@ export default async function FilmProjectPage({ params }: Props) {
 
   const categoryLabel =
     filmCategories.find((item) => item.slug === project.category)?.label ?? project.category.replace("-", " ");
+  const showAboutProject = project.slug === "crack-hack";
+  const awardsTitleBySlug: Record<string, string> = {
+    roger: "Roger - Short Film",
+    "for-living-next-door-to-alex": "Living Next Door to Alex",
+    "knock-knock-knock": "Knock, Knock, (Knock)",
+  };
+  const matchedAwards = awards.find(
+    (item) => item.title === (awardsTitleBySlug[project.slug] ?? project.title)
+  );
 
   return (
     <div className="section">
@@ -68,8 +77,27 @@ export default async function FilmProjectPage({ params }: Props) {
           <div className="flex flex-col gap-4">
             <h2 className="text-xl uppercase tracking-[0.2em]">Logline</h2>
             <p className="text-white/70">{project.logline}</p>
-            <h3 className="text-xl uppercase tracking-[0.2em]">About the Project</h3>
-            <p className="whitespace-pre-line text-white/70">{project.description}</p>
+            {matchedAwards ? (
+              <>
+                <h3 className="text-xl uppercase tracking-[0.2em]">
+                  Awards & Nominations ({matchedAwards.list.length})
+                </h3>
+                {matchedAwards.cycle ? (
+                  <p className="text-xs uppercase tracking-[0.3em] text-white/60">{matchedAwards.cycle}</p>
+                ) : null}
+                <ul className="space-y-2 text-sm text-white/70">
+                  {matchedAwards.list.map((entry) => (
+                    <li key={entry}>{entry}</li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
+            {showAboutProject ? (
+              <>
+                <h3 className="text-xl uppercase tracking-[0.2em]">About the Project</h3>
+                <p className="whitespace-pre-line text-white/70">{project.description}</p>
+              </>
+            ) : null}
           </div>
           <div className="card flex flex-col gap-4 p-6" style={{ "--accent": "#2a2a2a" } as CSSProperties}>
             <p className="eyebrow">Project Details</p>
