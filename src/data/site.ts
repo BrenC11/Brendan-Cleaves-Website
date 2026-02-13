@@ -42,7 +42,7 @@ export const projects: Project[] = [
     role: "Writer / Director",
     accent: "#7c1212",
     embedSrc: "https://framerate.com/embed/35xoNSF6",
-    thumbnailSrc: "/thumbnails/project-placeholder.svg",
+    thumbnailSrc: "/thumbnails/crack-hack.jpg",
   },
   {
     title: "The Tunnel",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     role: "Writer / Director",
     accent: "#223f35",
     embedSrc: "https://framerate.com/embed/0Yy8ojCx",
-    thumbnailSrc: "/thumbnails/project-placeholder.svg",
+    thumbnailSrc: "/thumbnails/the-lawnmower-men.jpg",
   },
   {
     title: "Roger",
