@@ -7,7 +7,6 @@ export default function ContactPage() {
       <div className="container max-w-3xl">
         <div className="card flex flex-col gap-8 p-8">
           <p className="eyebrow">Contact</p>
-          <h1 className="display">Let&apos;s work together.</h1>
           <a href={`mailto:${site.email}`} className="text-xl uppercase tracking-[0.2em]">
             {site.email}
           </a>

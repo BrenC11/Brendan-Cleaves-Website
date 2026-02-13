@@ -21,8 +21,9 @@ export default function Home() {
       <section className="section">
         <div className="container grid gap-10 lg:grid-cols-[1.25fr_1fr]">
           <div className="flex flex-col gap-6">
-            <p className="eyebrow">Director / Writer</p>
-            <h1 className="display">Simple stories. Sharp edges.</h1>
+            <p className="eyebrow">Latest Work</p>
+            <h1 className="display">Crak Hack</h1>
+            <p className="max-w-xl text-base text-white/70">{featuredProject.logline}</p>
             <div className="flex flex-wrap gap-4">
               <Link href="/film" className="tag">
                 View Work
