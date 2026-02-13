@@ -25,6 +25,7 @@ type Project = {
   description: string;
   runtime?: string;
   role?: string;
+  website?: string;
   accent: string;
   embedSrc?: string;
   thumbnailSrc?: string;
@@ -41,6 +42,7 @@ export const projects: Project[] = [
     description:
       "A sci-fi horror comedy about control, shame, and the devices we trust.\n\nThe spark for Crak Hack came from a junk email. One of those absurd warnings: \"We've been spying on you.\" It's funny at first - then it gets under your skin. What if someone really did hijack your devices? What if your most private moments became public?\n\nThe film became a satire of modern fear: losing control of our privacy, our devices, and ourselves. The humor cuts through the dread - technology as a weapon, shame as leverage, and the question of whether we can laugh at the things that terrify us.\n\nThe threats are real. Sextortion scams, spyware, and connected devices that can be hijacked without consent. These aren't hypotheticals - they're happening now. Crak Hack is a warning, but it's also a release valve. Sometimes the only way to survive the panic is to laugh at it.",
     role: "Writer / Director",
+    website: "https://www.crakhack.com",
     accent: "#7c1212",
     embedSrc: "https://framerate.com/embed/35xoNSF6",
     thumbnailSrc: "/thumbnails/crack-hack.jpg",
@@ -218,6 +220,20 @@ export const projects: Project[] = [
     accent: "#8a1f4f",
     embedSrc: "https://framerate.com/embed/xQx3zS-s",
     thumbnailSrc: "/thumbnails/clowns.jpeg.webp",
+  },
+  {
+    title: "Liz Lawrence - Big Machine",
+    slug: "liz-lawrence-big-machine",
+    category: "music-videos",
+    year: "2026",
+    logline: "A high-energy music video driven by performance and momentum.",
+    description:
+      "A music video for Liz Lawrence built around performance-led framing, pace, and visual texture.",
+    runtime: "TBD",
+    role: "Director",
+    accent: "#3352a1",
+    embedSrc: "https://www.youtube.com/embed/l7FgHi0Emc0",
+    thumbnailSrc: "/thumbnails/big machine.png.webp",
   },
   {
     title: "Target Zero",

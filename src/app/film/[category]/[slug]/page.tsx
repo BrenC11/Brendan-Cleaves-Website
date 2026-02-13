@@ -112,6 +112,14 @@ export default async function FilmProjectPage({ params }: Props) {
               <p>Year: {project.year}</p>
               <p>Role: {project.role ?? "Director"}</p>
               <p>Runtime: {project.runtime ?? "TBD"}</p>
+              {project.website ? (
+                <p>
+                  Official Site:{" "}
+                  <a href={project.website} target="_blank" rel="noreferrer" className="underline underline-offset-2">
+                    {project.website}
+                  </a>
+                </p>
+              ) : null}
             </div>
           </div>
         </div>
