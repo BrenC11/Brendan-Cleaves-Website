@@ -69,7 +69,7 @@ export default async function FilmProjectPage({ params }: Props) {
             <h2 className="text-xl uppercase tracking-[0.2em]">Logline</h2>
             <p className="text-white/70">{project.logline}</p>
             <h3 className="text-xl uppercase tracking-[0.2em]">About the Project</h3>
-            <p className="text-white/70">{project.description}</p>
+            <p className="whitespace-pre-line text-white/70">{project.description}</p>
           </div>
           <div className="card flex flex-col gap-4 p-6" style={{ "--accent": "#2a2a2a" } as CSSProperties}>
             <p className="eyebrow">Project Details</p>

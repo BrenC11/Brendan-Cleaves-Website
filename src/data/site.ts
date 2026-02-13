@@ -36,9 +36,10 @@ export const projects: Project[] = [
     slug: "crack-hack",
     category: "fiction",
     year: "2026",
-    logline: "A new genre project currently in post-production.",
+    logline:
+      "In a near-future dominated by VR intimacy, a lonely man's attempt to save his long-distance relationship with a high-tech device spirals into absurd and horrifying chaos when hackers seize control, forcing him to confront unspeakable scenarios in a desperate bid to regain his life.",
     description:
-      "A new fiction project currently in production. Trailer, artwork, and full release details will be added soon.",
+      "A sci-fi horror comedy about control, shame, and the devices we trust.\n\nThe spark for Crak Hack came from a junk email. One of those absurd warnings: \"We've been spying on you.\" It's funny at first - then it gets under your skin. What if someone really did hijack your devices? What if your most private moments became public?\n\nThe film became a satire of modern fear: losing control of our privacy, our devices, and ourselves. The humor cuts through the dread - technology as a weapon, shame as leverage, and the question of whether we can laugh at the things that terrify us.\n\nThe threats are real. Sextortion scams, spyware, and connected devices that can be hijacked without consent. These aren't hypotheticals - they're happening now. Crak Hack is a warning, but it's also a release valve. Sometimes the only way to survive the panic is to laugh at it.",
     role: "Writer / Director",
     accent: "#7c1212",
     embedSrc: "https://framerate.com/embed/35xoNSF6",
@@ -49,7 +50,7 @@ export const projects: Project[] = [
     slug: "the-tunnel",
     category: "fiction",
     year: "2024",
-    logline: "A grieving drifter confronts the story he helped bury.",
+    logline: "Four friends on a boat trip face a nightmarish battle for survival in a cursed tunnel.",
     description:
       "A psychological horror short about grief, guilt, and the stories we refuse to face. The film blends grounded performances with escalating dread and surreal visual turns.",
     runtime: "18 min",
@@ -63,7 +64,8 @@ export const projects: Project[] = [
     slug: "angela",
     category: "fiction",
     year: "2025",
-    logline: "A deadpan love story told through a surreal interview.",
+    logline:
+      "An awkward first date at a pub spirals into a comedic series of misadventures, revealing the quirky and heartfelt path to connection between four unlikely souls.",
     description:
       "A dark comedy romance told through an interview format that keeps folding in on itself. The tone balances awkward humor with emotional vulnerability.",
     runtime: "11 min",
@@ -77,7 +79,8 @@ export const projects: Project[] = [
     slug: "the-lawnmower-men",
     category: "fiction",
     year: "2021",
-    logline: "Two brothers chase a rumor across a dying seaside town.",
+    logline:
+      "Every year in a field in West Sussex, the worlds most extreme endurance motorsport race takes place, on Lawnmowers.",
     description:
       "A character-led short following two brothers across a fading landscape in search of something half-mythic, half-desperate. The film leans into atmosphere and understated tension.",
     runtime: "14 min",
@@ -91,7 +94,8 @@ export const projects: Project[] = [
     slug: "roger",
     category: "fiction",
     year: "2016",
-    logline: "A sharp-edged short built around a single night spiraling out.",
+    logline:
+      "Stephen arrives home after six months in Mongolia to discover his best friend Roy has replaced him with a ventriloquist doll called Roger.",
     description:
       "Originally written as proof of concept for a feature, ROGER pushes dark comedy and genre tension into a single escalating night. The short stars John Bradley and Seann Walsh.",
     runtime: "TBD",
@@ -106,7 +110,8 @@ export const projects: Project[] = [
     slug: "for-living-next-door-to-alex",
     category: "fiction",
     year: "2020",
-    logline: "A dark comedy built around one neighborhood rivalry gone sideways.",
+    logline:
+      "Matthew Little, TV actor and national treasure, has his quiet life turned upside down when the over-enthusiastic and annoyingly helpful Alex moves in next door.",
     description:
       "A comedy short about social pressure, pride, and petty rivalry escalating into chaos. The style is dry, observational, and deliberately uncomfortable.",
     runtime: "TBD",
@@ -162,7 +167,7 @@ export const projects: Project[] = [
     slug: "coldplay-echo",
     category: "fiction",
     year: "2019",
-    logline: "A dreamlike short built around light and motion.",
+    logline: "A girl's first date goes astray due to a pub's music taste.",
     description:
       "A stylized short that prioritizes mood, rhythm, and movement. The piece explores dream logic through color, texture, and expressive camera language.",
     runtime: "3:40",
@@ -216,8 +221,9 @@ export const projects: Project[] = [
     title: "Sam and Doug",
     slug: "sam-and-doug",
     category: "fiction",
-    year: "TBD",
-    logline: "A sharp, character-led short built around an unlikely duo.",
+    year: "2022",
+    logline:
+      "In a near-future where a virus has turned the population into rabid monsters, a desperate mother forms an unlikely friendship in order to return home and save her family.",
     description:
       "A genre-adjacent short centered on two mismatched leads forced into a high-pressure situation. The film balances tension with grounded comedic beats.",
     runtime: "TBD",
@@ -231,7 +237,7 @@ export const projects: Project[] = [
     slug: "the-wrong-swipe",
     category: "fiction",
     year: "2019",
-    logline: "A darkly comic short where one decision derails everything.",
+    logline: "A new dating app has unusual side effects.",
     description:
       "A short dark comedy about digital-age anxiety and impulsive choices. The film escalates a familiar everyday action into increasingly surreal consequences.",
     runtime: "TBD",
@@ -245,7 +251,7 @@ export const projects: Project[] = [
     slug: "knock-knock-knock",
     category: "fiction",
     year: "2023",
-    logline: "A twisted comedy where each knock makes the night worse.",
+    logline: "A man finds a mysterious door in his living room.",
     description:
       "A contained horror-comedy with a simple setup and relentless escalation. Each interruption pushes the protagonist deeper into paranoia and absurdity.",
     runtime: "TBD",
@@ -259,7 +265,7 @@ export const projects: Project[] = [
     slug: "the-dead-collectors",
     category: "fiction",
     year: "2021",
-    logline: "A surreal noir that follows a pair of reluctant fixers.",
+    logline: "During a pandemic in an alternate reality, two men have the job of collecting the deceased.",
     description:
       "A genre project mixing noir atmosphere, horror-comedy, and character-driven conflict. The story follows two reluctant fixers through an increasingly bizarre underworld.",
     role: "Writer / Director",
@@ -303,6 +309,8 @@ export const awards: AwardSection[] = [
       "In The Palace International Shorts Festival 2025 (Academy Qualifying)",
       "Houston Comedy Festival 2025",
       "Filmfest Oberursel 2025",
+      "XXS-Kurzfilmfestival 2025 - Winner - Audience Award",
+      "All the Laughs Film Festival - Winner - Best Rom Com",
     ],
   },
   {
