@@ -40,21 +40,29 @@ export default function AboutPage() {
           {awards.map((item) => (
             <details
               key={item.title}
-              className="card p-6"
+              className="card group p-4 md:p-5"
               style={{ "--accent": "#2f2f2f" } as CSSProperties}
             >
               <summary className="cursor-pointer list-none">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div>
-                    <h2 className="text-lg uppercase tracking-[0.2em]">{item.title}</h2>
+                  <div className="min-w-0">
+                    <h2 className="text-sm uppercase tracking-[0.14em] md:text-base">{item.title}</h2>
                     {item.cycle ? (
-                      <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/60">{item.cycle}</p>
+                      <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/60">{item.cycle}</p>
                     ) : null}
                   </div>
-                  <span className="tag">{item.list.length} entries</span>
+                  <div className="flex items-center gap-2">
+                    <span className="tag">{item.list.length} entries</span>
+                    <span
+                      aria-hidden
+                      className="text-lg text-white/70 transition-transform duration-200 group-open:rotate-180"
+                    >
+                      ▾
+                    </span>
+                  </div>
                 </div>
               </summary>
-              <ul className="mt-4 space-y-2 text-sm text-white/70">
+              <ul className="mt-3 space-y-1.5 text-sm text-white/70">
                 {sortAwardEntries(item.list).map((entry) => (
                   <li key={entry}>{entry}</li>
                 ))}
