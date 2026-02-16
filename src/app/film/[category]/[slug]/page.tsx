@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
+import { notFound, redirect } from "next/navigation";
 import { awards, filmCategories, projects } from "@/data/site";
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
+  searchParams: Promise<{ error?: string }>;
 };
 
 const sortAwardEntries = (entries: string[]) => {
@@ -12,6 +14,28 @@ const sortAwardEntries = (entries: string[]) => {
   const winners = entries.filter((entry) => /\bwinner\b/i.test(entry));
   return [...winners, ...nonWinners];
 };
+const ANGELA_COOKIE = "angela_access";
+
+async function unlockAngela(formData: FormData) {
+  "use server";
+
+  const password = String(formData.get("password") ?? "");
+  const expected = process.env.ANGELA_PAGE_PASSWORD;
+
+  if (expected && password === expected) {
+    const cookieStore = await cookies();
+    cookieStore.set(ANGELA_COOKIE, "ok", {
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      path: "/film/fiction/angela",
+      maxAge: 60 * 60 * 24 * 30,
+    });
+    redirect("/film/fiction/angela");
+  }
+
+  redirect("/film/fiction/angela?error=1");
+}
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -20,8 +44,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function FilmProjectPage({ params }: Props) {
+export default async function FilmProjectPage({ params, searchParams }: Props) {
   const { category, slug } = await params;
+  const query = await searchParams;
   const project = projects.find(
     (item) => item.category === category && item.slug === slug
   );
@@ -41,6 +66,43 @@ export default async function FilmProjectPage({ params }: Props) {
   const matchedAwards = awards.find(
     (item) => item.title === (awardsTitleBySlug[project.slug] ?? project.title)
   );
+  const isAngelaPage = project.slug === "angela";
+  const expectedAngelaPassword = process.env.ANGELA_PAGE_PASSWORD;
+
+  if (isAngelaPage && expectedAngelaPassword) {
+    const cookieStore = await cookies();
+    const hasAccess = cookieStore.get(ANGELA_COOKIE)?.value === "ok";
+
+    if (!hasAccess) {
+      return (
+        <div className="section">
+          <div className="container max-w-xl">
+            <div className="card flex flex-col gap-5 p-6" style={{ "--accent": project.accent } as CSSProperties}>
+              <p className="eyebrow">Private Screener</p>
+              <h1 className="text-2xl uppercase tracking-[0.16em]">{project.title}</h1>
+              <p className="text-sm text-white/70">Enter password to view this page.</p>
+              <form action={unlockAngela} className="flex flex-col gap-3">
+                <input
+                  type="password"
+                  name="password"
+                  required
+                  className="rounded-md border border-white/20 bg-black/40 px-3 py-2 text-sm text-white outline-none placeholder:text-white/40 focus:border-white/50"
+                  placeholder="Password"
+                />
+                <button
+                  type="submit"
+                  className="rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm uppercase tracking-[0.2em] text-white transition hover:bg-white/20"
+                >
+                  Unlock
+                </button>
+              </form>
+              {query.error ? <p className="text-sm text-red-300">Incorrect password.</p> : null}
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
 
   return (
     <div className="section">

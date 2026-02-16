@@ -219,7 +219,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#3b2f68",
     embedSrc: "https://player.vimeo.com/video/91305002?h=2686b1e72b&title=0&byline=0&portrait=0",
-    thumbnailSrc: "/thumbnails/kids.jpg.webp",
+    thumbnailSrc: "/thumbnails/2nd.jpg.webp",
   },
   {
     title: "VIII 'FEAR NOTHING'",
@@ -247,6 +247,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#6a3d2a",
     embedSrc: "https://player.vimeo.com/video/35882568?h=86b3866d57&title=0&byline=0&portrait=0",
+    thumbnailSrc: "/thumbnails/Hey.png.webp",
   },
   {
     title: "Friction Ft Josh Barry \"Freaks\"",
@@ -260,6 +261,7 @@ export const projects: Project[] = [
     role: "Director",
     accent: "#2f4f6a",
     embedSrc: "https://player.vimeo.com/video/138165862?h=7b6bdeff8e&title=0&byline=0&portrait=0",
+    thumbnailSrc: "/thumbnails/Freak.jpg.webp",
   },
   {
     title: "Karaoke For Beginners - Clowns",
