@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { cookies } from "next/headers";
 import { notFound, redirect } from "next/navigation";
+import YouTubePlayer from "@/components/YouTubePlayer";
 import { awards, filmCategories, projects } from "@/data/site";
 
 type Props = {
@@ -13,6 +14,16 @@ const sortAwardEntries = (entries: string[]) => {
   const nonWinners = entries.filter((entry) => !/\bwinner\b/i.test(entry));
   const winners = entries.filter((entry) => /\bwinner\b/i.test(entry));
   return [...winners, ...nonWinners];
+};
+
+const isYouTubeSource = (src: string) => {
+  try {
+    const parsed = new URL(src);
+    const host = parsed.hostname.toLowerCase();
+    return host.includes("youtube.com") || host.includes("youtu.be");
+  } catch {
+    return false;
+  }
 };
 const ANGELA_COOKIE = "angela_access";
 
@@ -68,6 +79,7 @@ export default async function FilmProjectPage({ params, searchParams }: Props) {
   );
   const isAngelaPage = project.slug === "angela";
   const expectedAngelaPassword = process.env.ANGELA_PAGE_PASSWORD;
+  const useYouTubePlayer = project.embedSrc ? isYouTubeSource(project.embedSrc) : false;
 
   if (isAngelaPage && expectedAngelaPassword) {
     const cookieStore = await cookies();
@@ -120,14 +132,18 @@ export default async function FilmProjectPage({ params, searchParams }: Props) {
         <div className="card flex min-h-[360px] flex-col gap-6 p-6" style={{ "--accent": project.accent } as CSSProperties}>
           {project.embedSrc ? (
             <div className="relative w-full overflow-hidden rounded-md border border-white/10 bg-black/60 pt-[56.25%]">
-              <iframe
-                src={project.embedSrc}
-                title={`${project.title} video`}
-                className="absolute inset-0 h-full w-full"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-              />
+              {useYouTubePlayer ? (
+                <YouTubePlayer src={project.embedSrc} title={`${project.title} video`} accent={project.accent} />
+              ) : (
+                <iframe
+                  src={project.embedSrc}
+                  title={`${project.title} video`}
+                  className="absolute inset-0 h-full w-full"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              )}
             </div>
           ) : (
             <div className="flex min-h-[240px] flex-col items-center justify-center gap-3 text-center">

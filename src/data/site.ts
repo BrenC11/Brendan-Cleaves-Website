@@ -44,7 +44,7 @@ export const projects: Project[] = [
     role: "Writer / Director",
     website: "https://www.crakhack.com",
     accent: "#7c1212",
-    embedSrc: "https://framerate.com/embed/35xoNSF6",
+    embedSrc: "https://youtu.be/2Ta2SqKFmSk",
     thumbnailSrc: "/thumbnails/crack-hack.jpg",
   },
   {
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     runtime: "18 min",
     role: "Writer / Director",
     accent: "#a21d1d",
-    embedSrc: "https://framerate.com/embed/0WMt_6yQ",
+    embedSrc: "https://youtu.be/Yapvg7EGQuI",
     thumbnailSrc: "/thumbnails/the-tunnel.webp",
   },
   {
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     runtime: "14 min",
     role: "Writer / Director",
     accent: "#223f35",
-    embedSrc: "https://framerate.com/embed/0Yy8ojCx",
+    embedSrc: "https://youtu.be/a_9xKgQiHzk",
     thumbnailSrc: "/thumbnails/the-lawnmower-men.jpg",
   },
   {
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     runtime: "TBD",
     role: "Director",
     accent: "#5f5b52",
-    embedSrc: "https://framerate.com/embed/yWdAT2s0",
+    embedSrc: "https://youtu.be/D-waHz-0m9g",
     thumbnailSrc: "/thumbnails/for-living-next-door-to-alex.jpg",
   },
   {
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     runtime: "30 sec",
     role: "Director",
     accent: "#2f6b4d",
-    embedSrc: "https://framerate.com/embed/GqD_-gf8",
+    embedSrc: "https://youtu.be/NIHQhvgHJao",
     thumbnailSrc: "/thumbnails/specsavers-nessie.webp",
   },
   {
@@ -147,7 +147,7 @@ export const projects: Project[] = [
     runtime: "60 sec",
     role: "Director",
     accent: "#8a6a2a",
-    embedSrc: "https://framerate.com/embed/QWEuTtcq",
+    embedSrc: "https://youtu.be/ShSrQ5Y8Yh0",
     thumbnailSrc: "/thumbnails/Hyunidi.jpeg.webp",
   },
   {
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     runtime: "TBD",
     role: "Director",
     accent: "#6e5a2d",
-    embedSrc: "https://framerate.com/embed/OLN6LpOL",
+    embedSrc: "https://youtu.be/2W2SC3ZDR-g",
     thumbnailSrc: "/thumbnails/Hewden.jpeg.webp",
   },
   {
@@ -189,8 +189,7 @@ export const projects: Project[] = [
     runtime: "3:40",
     role: "Director",
     accent: "#cf5a3a",
-    embedSrc:
-      "https://player.vimeo.com/video/357164929?h=994b7763e6&color=39ff14&title=0&byline=0&portrait=0",
+    embedSrc: "https://youtu.be/HItD37yb9t0",
     thumbnailSrc: "/thumbnails/coldplayPoster.png",
   },
   {
@@ -264,20 +263,6 @@ export const projects: Project[] = [
     thumbnailSrc: "/thumbnails/Freak.jpg.webp",
   },
   {
-    title: "Karaoke For Beginners - Clowns",
-    slug: "karaoke-for-beginners-clowns",
-    category: "music-videos",
-    year: "2026",
-    logline: "A new music video release with bold performance energy.",
-    description:
-      "A music video for Karaoke For Beginners, built around a strong central performance style and high-impact visual rhythm.",
-    runtime: "TBD",
-    role: "Director",
-    accent: "#8a1f4f",
-    embedSrc: "https://framerate.com/embed/xQx3zS-s",
-    thumbnailSrc: "/thumbnails/clowns.jpeg.webp",
-  },
-  {
     title: "Liz Lawrence - Big Machine",
     slug: "liz-lawrence-big-machine",
     category: "music-videos",
@@ -290,6 +275,20 @@ export const projects: Project[] = [
     accent: "#3352a1",
     embedSrc: "https://www.youtube.com/embed/l7FgHi0Emc0",
     thumbnailSrc: "/thumbnails/big machine.png.webp",
+  },
+  {
+    title: "Karaoke For Beginners - Clowns",
+    slug: "karaoke-for-beginners-clowns",
+    category: "music-videos",
+    year: "2026",
+    logline: "A new music video release with bold performance energy.",
+    description:
+      "A music video for Karaoke For Beginners, built around a strong central performance style and high-impact visual rhythm.",
+    runtime: "TBD",
+    role: "Director",
+    accent: "#8a1f4f",
+    embedSrc: "https://www.youtube.com/watch?v=VPgef2Ku0cw",
+    thumbnailSrc: "/thumbnails/clowns.jpeg.webp",
   },
   {
     title: "Target Zero",
@@ -329,7 +328,7 @@ export const projects: Project[] = [
     runtime: "TBD",
     role: "Director",
     accent: "#4e5666",
-    embedSrc: "https://framerate.com/embed/GqJ6WK5T",
+    embedSrc: "https://youtu.be/xFN9xhBJFQE",
     thumbnailSrc: "/thumbnails/the-wrong-swipe.webp",
   },
   {
@@ -343,7 +342,7 @@ export const projects: Project[] = [
     runtime: "TBD",
     role: "Director",
     accent: "#7a4d39",
-    embedSrc: "https://framerate.com/embed/MDtycjVa",
+    embedSrc: "https://youtu.be/eUJPPIIthGE",
     thumbnailSrc: "/thumbnails/knock-knock-knock.webp",
   },
   {
